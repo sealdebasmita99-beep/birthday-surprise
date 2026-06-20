@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 26th Birthday my Sona ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#111;color:#fff;overflow-x:hidden}
+#loginPage{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#111}
+input,button{padding:12px;border-radius:10px;border:none;margin-top:10px}
+button{cursor:pointer}
+#mainContent{display:none}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('images/hero.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.hero h1{font-size:3rem}
+section{padding:60px 20px;text-align:center}
+.gallery img,.chat-gallery img{width:280px;max-width:90%;border-radius:15px;margin:10px}
+.timeline{max-width:900px;margin:auto;padding:30px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);padding:20px;overflow:auto}
+.modal-content{max-width:450px;width:90%;padding:20px;border-radius:20px;margin:auto;text-align:center}
+.modal img{width:auto;max-width:100;max-height:400px;object-fit:cover;border-radius:15px;display:block;margin:auto;}
+.close{float:right;font-size:30px;cursor:pointer}
+.timeline{max-width:700px;margin:auto;text-align:left}
+.timeline div{background:#222;padding:15px;margin:10px 0;border-radius:10px}
+.card{background:#222;padding:15px;border-radius:12px;margin:10px;display:inline-block;width:250px}
+.heart{position:fixed;bottom:-20px;animation:floatUp 8s linear infinite}
+@keyframes floatUp{from{transform:translateY(0)}to{transform:translateY(-100vh);opacity:0}}
+a.song{display:inline-block;padding:12px 20px;background:#e91e63;color:#fff;text-decoration:none;border-radius:10px}
+</style>
+</head>
+<body>
+
+<div id="loginPage">
+<h2>💖 Birthday Surprise 💖</h2>
+<p>Hint: The day our forever story officially began ❤️</p>
+<input type="password" id="password" placeholder="Enter Password">
+<button onclick="checkPassword()">Unlock ❤️</button>
+</div>
+
+<div id="mainContent">
+
+<div class="hero">
+<div>
+<h1>Happy 26th Birthday<br>Swapnesh ❤️</h1>
+<p>A journey that started with a message became my favorite story.</p>
+</div>
+</div>
+
+<section>
+<h2>🎵 Our Song</h2><br>
+<a class="song" target="_blank" href="https://www.youtube.com/results?search_query=Tum+Se+Hi+Jab+We+Met">Play Tum Se Hi ❤️</a>
+</section>
+
+<section>
+<h2>📖 Our Journey</h2>
+<div class="timeline">
+<div class="item" onclick="openMemory('💌 First Chat','The Message That Changed Everything','A simple conversation slowly became my favorite part of the day. Little did we know that these chats would become our most precious memories. ❤️','images/chat1.jpg')">💌 First Chat</div>
+
+<div class="item" onclick="openMemory('❤️ First Meet','Jagadhatri Puja, Chandannagar','During Jagadhatri Puja in Chandannagar, we met in person for the first time. What started as a meeting became the beginning of something beautiful. ❤️','images/JagadhatriPuja.jpg')">❤️ First Meet</div>
+
+<div class="item" onclick="openMemory('📸 First Photo Together','Our First Photo','A photo captures a moment. But this photo captures the beginning of our story. ❤️','images/ankur.jpg')">📸 First Photo Together</div>
+
+<div class="item" onclick="openMemory('🏔️ First Trip Together','Kedarnath Trip','From long journeys to breathtaking mountains, our Kedarnath trip became one of the most beautiful chapters of our story. ❤️','images/memory1.jpg')">🏔️ First Trip Together</div>
+
+<div class="item" onclick="openMemory('🙏 Temple Visits & Adventure','Blessed Memories','Together we visited Kedarnath, Badrinath, Triyuginarayan and Dhari Devi. These became memories that will stay with us forever. ❤️','images/memory2.jpg')">🙏 Temple Visits & Adventure</div>
+
+<div class="item" onclick="openMemory('🎂 প্রথম জন্মদিন একসাথে','শুভ জন্মদিন Swapnesh ❤️','তোর জীবনের প্রথম জন্মদিন যা আমরা একসাথে উদযাপন করছি, সেটা আমার কাছে খুবই বিশেষ। তোর সাথে কাটানো প্রতিটি মুহূর্ত আমার জীবনের সবচেয়ে সুন্দর স্মৃতি। অনেক ভালোবাসা ❤️ — your Sona','images/hero.jpg')">🎂 First Birthday Note</div>
+
+<div class="item" onclick="openMemory('♾️ Forever To Go','আমাদের ভবিষ্যৎ','আমি চাই আমরা এভাবেই হাত ধরে একসাথে বুড়ো হই। জীবনের প্রতিটি সুখ-দুঃখ একসাথে পার করি। আমরা দুজন মিলে আমাদের সব স্বপ্ন পূরণ করবো। ❤️','images/hero1.jpg')">♾️ Forever To Go</div>
+</div>
+</section>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">✖</span>
+<h2 id="title"></h2>
+<h3 id="subtitle"></h3>
+<img id="img" src="">
+<p id="text" style="line-height:1.8"></p>
+</div>
+</div>
+
+<section>
+<h2>📸 Our Memories So Far ❤️ </h2><br>
+<img id="slide" src="images/ankur.jpg" width="350" style="max-width:90%;border-radius:15px">
+</section>
+
+<section>
+<h2>💌 Messages That Became Memories</h2>
+<div class="chat-gallery">
+<img src="images/chat1.jpg">
+<img src="images/chat2.jpg">
+</div>
+</section>
+
+<section>
+<h2>❤️ 26 Reasons I Love You</h2>
+<div id="reasons"></div>
+</section>
+
+<section>
+<h2>🎥 A Message From Debasmita</h2><br>
+<video width="700" controls style="max-width:95%">
+<source src="videos/birthday.mp4" type="video/mp4">
+</video>
+</section>
+
+<section>
+<h2>💖 Letter To You</h2><br>
+<p style="max-width:800px;margin:auto;line-height:1.8">
+Dear Swapnesh,<br><br>
+Thank you for becoming the person I want to share my happiest memories with.<br>
+Every trip, every call, every silly chat and every dream we talk about has made my life more beautiful.<br><br>
+This is our first birthday together, and I wanted to create something that would stay with us forever.<br><br>
+Happy 26th Birthday.<br><br>
+Love,<br>
+Your Baby ❤️
+</p>
+</section>
+
+<section>
+<h2>🎁 One Last Surprise</h2><br>
+<button onclick="showGift()">Open Your Birthday Gift ❤️</button>
+<p id="gift" style="display:none;margin-top:20px;font-size:22px">
+Will you continue making memories with me for all the birthdays to come? ❤️
+</p>
+</section>
+
+<section>
+<h2>📱 Scan After Deployment</h2>
+<p>Add your Netlify URL QR code here after deployment.</p>
+</section>
+
+</div>
+
+
+<script>
+function checkPassword(){
+ if(document.getElementById('password').value==='20112025'){
+   document.getElementById('loginPage').style.display='none';
+   document.getElementById('mainContent').style.display='block';
+ }else alert('Wrong password ❤️');
+}
+
+function showGift(){
+ document.getElementById('gift').style.display='block';
+}
+
+const reasons=[
+"Your smile","Your kindness","Your support","Your laugh","Your honesty","Your patience",
+"Your voice","Your caring nature","Your positivity","Your hugs","Your understanding",
+"Your confidence","Your dedication","Your sense of humor","Your intelligence","Your loyalty",
+"Your strength","Your respect","Your passion","Your encouragement","Your ambition",
+"Our memories","Our conversations","The way you love me","The way you make me feel safe","Simply because you're you ❤️"
+];
+
+const container=document.getElementById('reasons');
+reasons.forEach((r,i)=>{
+ let d=document.createElement('div');
+ d.className='card';
+ d.innerHTML='<b>Reason #'+(i+1)+'</b><br><br>'+r;
+ container.appendChild(d);
+});
+
+const photos=['images/memory1.jpg','images/memory2.jpg','images/ankur.jpg','images/JagadhatriPuja.jpg','images/I1.jpg','images/I2.jpg','images/I3.jpg',
+'images/I4.jpg','images/I5.jpg','images/I6.jpg','images/I7.jpg','images/I8.jpg','images/I9.jpg','images/I10.jpg','images/I11.jpg','images/I12.jpg','images/I13.jpg',
+'images/I14.jpg','images/I15.jpg','images/I16.jpg','images/I17.jpg','images/I18.jpg','images/I19.jpg','images/I20.jpg','images/I21.jpg','images/I22.jpg',
+'images/I23.jpg','images/I24.jpg','images/I25.jpg','images/I26.jpg','images/I27.jpg','images/I28.jpg','images/I29.jpg','images/I30.jpg','images/I31.jpg','images/I32.jpg',
+'images/I33.jpg','images/I34.jpg','images/I35.jpg','images/I36.jpg','images/I37.jpg','images/I38.jpg','images/I39.jpg',];
+let current=0;
+setInterval(()=>{
+ const s=document.getElementById('slide');
+ if(!s) return;
+ current=(current+1)%photos.length;
+ s.src=photos[current];
+},1500);
+
+setInterval(()=>{
+ const h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML='❤️';
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(20+Math.random()*20)+'px';
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+},600);
+
+function openMemory(t,s,txt,img){
+
+    document.getElementById('title').innerText = t;
+    document.getElementById('subtitle').innerText = s;
+    document.getElementById('text').innerText = txt;
+    document.getElementById('img').src = img;
+
+    // Title styling (First Chat, First Meet, etc.)
+    document.getElementById('title').style.fontFamily = "'Dancing Script', cursive";
+	document.getElementById('title').style.fontSize = '42px';
+	document.getElementById('title').style.color = '#ff9eb5';
+
+    // Subtitle styling (The Message That Changed Everything, Jagadhatri Puja...)
+    document.getElementById('subtitle').style.fontFamily = "'Playfair Display', serif";
+	document.getElementById('subtitle').style.fontSize = '18px';
+	document.getElementById('subtitle').style.color = '#d8bfd8';
+
+    // Description text styling
+    document.getElementById('text').style.fontFamily = "'Poppins', sans-serif";
+	document.getElementById('text').style.fontSize = '16px';
+	document.getElementById('text').style.color = '#f5f5f5';
+
+    document.getElementById('modal').style.display = 'block';
+}
+function closeModal(){
+ document.getElementById('modal').style.display='none';
+}
+</script>
+
+</body>
+</html>
